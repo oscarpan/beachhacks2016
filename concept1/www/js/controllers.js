@@ -92,7 +92,8 @@ angular.module('starter.controllers', [])
       username: $localstorage.get('username'),
       score: $rootScope.gameData.score,
     }).then(function(data){
-      console.log(data.data);
+      $rootScope.gameData.showSubmit = false;
+      $rootScope.highscores = data.data;
     });
 
   };
@@ -152,7 +153,7 @@ angular.module('starter.controllers', [])
 
   $scope.cardSwipedLeft = function(index, card) {
     console.log('LEFT SWIPE');
-    if(card.a == 0){
+    if(card.a === 0){
       $rootScope.gameData.currentScore++;
     }
     else{
@@ -164,7 +165,7 @@ angular.module('starter.controllers', [])
   };
   $scope.cardSwipedRight = function(index, card) {
     console.log('RIGHT SWIPE');
-    if(card.a == 1){
+    if(card.a === 1){
       $rootScope.gameData.currentScore++;
     }
     else{
@@ -181,7 +182,10 @@ angular.module('starter.controllers', [])
     $rootScope.modal.show();
 
     $rootScope.gameData.showSubmit = true;
-    if($localstorage.get('username') != ""){
+    function isBlank(str) {
+      return (!str || /^\s*$/.test(str));
+    }
+    if(!isBlank($localstorage.get('username'))){
       $rootScope.gameData.showSubmit = false;
       $http.post('http://areyoufurreal.com/api/submitscore', {
         level_id: $rootScope.gameData.level,
