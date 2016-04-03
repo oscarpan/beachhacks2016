@@ -1,5 +1,20 @@
-<ion-view view-title="Browse">
-  <ion-content>
-    <h1>Browse</h1>
+<ion-view>
+  <ion-nav-title>
+    Score: {{ gameData.currentScore }}
+  </ion-nav-title>
+  <ion-content scroll="false">
+    <td-cards>
+      <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index, card)" on-swipe-right="cardSwipedRight($index, card)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
+        <div class="image">
+          <div class="no-text">FALSE</div>
+          <div class="yes-text">TRUE</div>
+
+          <div class="image-content">
+            <h1>{{ card.question }}</h1>
+          </div>
+
+        </div>
+      </td-card>
+    </td-cards>
   </ion-content>
 </ion-view>

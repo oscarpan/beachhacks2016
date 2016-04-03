@@ -1,25 +1,23 @@
 <ion-modal-view>
   <ion-header-bar>
-    <h1 class="title">Login</h1>
+    <h1 class="title">Level Completed!</h1>
     <div class="buttons">
       <button class="button button-clear" ng-click="closeLogin()">Close</button>
     </div>
   </ion-header-bar>
-  <ion-content>
+  <ion-content scroll="false" class="level-completed">
+    <h1>Score: {{ gameData.score }}</h1>
     <form ng-submit="doLogin()">
       <div class="list">
         <label class="item item-input">
           <span class="input-label">Username</span>
           <input type="text" ng-model="loginData.username">
         </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
         <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
+          <button class="button button-block button-positive" type="submit">Submit Score</button>
         </label>
       </div>
     </form>
+    <h2>New Image Unlocked!</h2>
   </ion-content>
 </ion-modal-view>
