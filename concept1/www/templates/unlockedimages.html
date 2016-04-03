@@ -1,0 +1,15 @@
+<ion-view view-title="Unlocked Images">
+  <ion-content class="unlocked-images-content">
+    <div ng-repeat="lvl in [] | range:gameData.level">
+      <h3>{{ levels[lvl].name }}</h3>
+      <img src="{{ levels[lvl].image }}" class="unlocked-image">
+    </div>
+    <div ng-show="gameData.level == 0" class="unlocked-images-none">
+      <h3>You have no images yet! :(</h3>
+      <a class="button button-positive" href="#/app/browse">
+        Unlock some images!
+      </a>
+
+    </div>
+  </ion-content>
+</ion-view>

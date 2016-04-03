@@ -1,0 +1,26 @@
+<ion-view view-title="Submit Facts">
+  <ion-content scroll="false">
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Username</span>
+        <input type="text" placeholder="furreal" ng-model="form.username">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Question</span>
+        <input type="text" placeholder="Chickens have flown before" ng-model="form.question">
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Answer
+        </div>
+        <select ng-model="form.answer">
+          <option selected value="TRUE">True</option>
+          <option value="FALSE">False</option>
+        </select>
+      </label>
+    </div>
+    <div class="padding">
+      <button class="button button-block button-positive" ng-click="submitFact(form)">Submit Fact</button>
+    </div>
+  </ion-content>
+</ion-view>

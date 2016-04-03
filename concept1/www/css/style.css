@@ -19,7 +19,8 @@ td-card {
   border: 1px solid #999;
   box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
   border-radius: 6px;
-  background: white;
+  background-color: white;
+  background-size: cover;
 }
 /*
 td-card.card-0 {
@@ -80,4 +81,15 @@ td-card img {
 .level-completed{
   text-align: center;
   padding: 10px;
+}
+.unlocked-images-content{
+  text-align: center;
+  padding: 10px;
+}
+.unlocked-images-none{
+  padding-top: 50px;
+}
+
+.unlocked-image{
+  max-width: 100%;
 }

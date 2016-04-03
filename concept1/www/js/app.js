@@ -32,15 +32,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.unlockedimages', {
+    url: '/unlockedimages',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/unlockedimages.html'
       }
     }
   })
-
+    .state('app.submitfacts', {
+      url: '/submitfacts',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/submitfacts.html',
+          controller: 'SubmitFactsCtrl'
+        }
+      }
+    })
   .state('app.browse', {
       url: '/browse',
       views: {
@@ -72,7 +80,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 })
+.filter('range', function() {
+  return function(input, total) {
+    total = parseInt(total);
 
+    for (var i=0; i<total; i++) {
+      input.push(i);
+    }
+
+    return input;
+  };
+})
 .factory('$localstorage', ['$window', function($window) {
   return {
     set: function(key, value) {
