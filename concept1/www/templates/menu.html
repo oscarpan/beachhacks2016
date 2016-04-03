@@ -14,18 +14,21 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Are You Fur Real?</h1>
+      <h1 class="title">Are You Furreal?</h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close href="#/app/browse">
-          Play
+        <ion-item menu-close href="#/app/instructions">
+          Instructions
+        </ion-item>
+        <ion-item menu-close ng-repeat="level in levels" href="#/app/browse/{{level.id}}">
+          <i class="icon ion-ios-game-controller-a"></i> {{ level.name }}
         </ion-item>
         <ion-item menu-close href="#/app/unlockedimages">
-          Unlocked Images
+          <i class="icon ion-images"></i> Unlocked Images
         </ion-item>
         <ion-item menu-close href="#/app/submitfacts">
-          Submit Facts
+          <i class="icon ion-plus"></i> Submit Facts
         </ion-item>
       </ion-list>
     </ion-content>

@@ -1,21 +1,21 @@
 <ion-view view-title="Submit Facts">
   <ion-content scroll="false">
-    <div class="list">
+    <div class="list" style="background: white">
       <label class="item item-input item-stacked-label">
         <span class="input-label">Username</span>
         <input type="text" placeholder="furreal" ng-model="form.username">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Question</span>
-        <input type="text" placeholder="Chickens have flown before" ng-model="form.question">
+        <input type="text" placeholder="Chickens have flown before" ng-model="form.q">
       </label>
       <label class="item item-input item-select">
         <div class="input-label">
           Answer
         </div>
-        <select ng-model="form.answer">
-          <option selected value="TRUE">True</option>
-          <option value="FALSE">False</option>
+        <select ng-model="form.a">
+          <option value="1">True</option>
+          <option value="0">False</option>
         </select>
       </label>
     </div>

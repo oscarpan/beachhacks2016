@@ -3,8 +3,8 @@
     Score: {{ gameData.currentScore }}
   </ion-nav-title>
   <ion-content scroll="false">
-    <div ng-show="gameData.level >= levels.length" class="text-center" style="padding-top:40px;">
-      <h1>Congratulations! You've reached the end of the game!</h1>
+    <div ng-show="cards.length == 0" class="text-center" style="padding-top:40px;">
+      <h1>Congratulations! You've reached the end of the stack!</h1>
       <h3>As a master of facts, why not submit some facts?</h3>
       <a class="button button-positive" href="#/app/submitfacts">
         Submit your own fun facts!
@@ -12,13 +12,13 @@
     </div>
     <td-cards>
       <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index, card)" on-swipe-right="cardSwipedRight($index, card)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}"
-               style="background-image:url('{{ levels[gameData.level].background }}')">
+               style="background-image:url('{{ level.background }}')">
         <div class="image">
           <div class="no-text">FALSE</div>
           <div class="yes-text">TRUE</div>
 
           <div class="image-content">
-            <h1>{{ card.question }}</h1>
+            <h1>{{ card.q }}</h1>
           </div>
 
         </div>

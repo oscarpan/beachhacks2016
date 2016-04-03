@@ -5,12 +5,10 @@
       <button class="button button-clear" ng-click="closeLogin()">Continue</button>
     </div>
   </ion-header-bar>
-  <ion-content scroll="false" class="level-completed">
-    <h2>New Image Unlocked!</h2>
-    <img src="{{ levels[gameData.level - 1].image }}" class="unlocked-image">
+  <ion-content class="level-completed">
 
     <h1>Score: {{ gameData.score }}</h1>
-    <form ng-submit="doLogin()">
+    <form ng-submit="doLogin()" ng-show="gameData.showSubmit">
       <div class="list">
         <label class="item item-input">
           <span class="input-label">Username</span>
@@ -21,5 +19,28 @@
         </label>
       </div>
     </form>
+    <table class="level-completed-table pure-table pure-table-striped">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Score</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="highscore in highscores">
+          <td>{{ highscore.username }}</td>
+          <td>{{ highscore.score }}</td>
+          <td>{{ highscore.created_at }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div ng-show="newUnlockedImages[0]">
+      <h2>New Image<span ng-show="newUnlockedImages[1]">s</span> Unlocked!</h2>
+      <img src="{{ image.url }}" ng-repeat="image in newUnlockedImages" class="unlocked-image">
+    </div>
+
   </ion-content>
 </ion-modal-view>

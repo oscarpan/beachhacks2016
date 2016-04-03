@@ -1,5 +1,11 @@
 /* Empty. Add your own CSS if you like */
+.pure-table{border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #cbcbcb}.pure-table caption{color:#000;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}.pure-table td,.pure-table th{border-left:1px solid #cbcbcb;border-width:0 0 0 1px;font-size:inherit;margin:0;overflow:visible;padding:.5em 1em}.pure-table td:first-child,.pure-table th:first-child{border-left-width:0}.pure-table thead{background-color:#e0e0e0;color:#000;text-align:left;vertical-align:bottom}.pure-table td{background-color:transparent}.pure-table-odd td{background-color:#f2f2f2}.pure-table-striped tr:nth-child(2n-1) td{background-color:#f2f2f2}.pure-table-bordered td{border-bottom:1px solid #cbcbcb}.pure-table-bordered tbody>tr:last-child>td{border-bottom-width:0}.pure-table-horizontal td,.pure-table-horizontal th{border-width:0 0 1px;border-bottom:1px solid #cbcbcb}.pure-table-horizontal tbody>tr:last-child>td{border-bottom-width:0}
 
+
+ion-content{
+  background: url('http://i.imgur.com/QaUig9l.png');
+  background-size: 500px 333px;
+}
 
 td-cards {
   display: block;
@@ -77,10 +83,24 @@ td-card img {
   opacity: 0;
 }
 
+.instructions-content{
+  padding: 25px;
+  background: url('http://i.imgur.com/OukI8Ih.jpg');
+  background-size: cover;
+}
 
 .level-completed{
   text-align: center;
   padding: 10px;
+}
+.level-completed-table{
+  width: 100%;
+  margin-bottom: 15px;
+}
+.level-completed-table th{
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 .unlocked-images-content{
   text-align: center;

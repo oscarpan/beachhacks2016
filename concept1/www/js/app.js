@@ -32,6 +32,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     controller: 'AppCtrl'
   })
 
+    .state('app.instructions', {
+      url: '/instructions',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/instructions.html'
+        }
+      }
+    })
+
   .state('app.unlockedimages', {
     url: '/unlockedimages',
     views: {
@@ -50,7 +59,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
       }
     })
   .state('app.browse', {
-      url: '/browse',
+      url: '/browse/:levelId',
       views: {
         'menuContent': {
           templateUrl: 'templates/browse.html',
@@ -78,7 +87,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/instructions');
 })
 .filter('range', function() {
   return function(input, total) {
@@ -104,6 +113,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     },
     getObject: function(key) {
       return JSON.parse($window.localStorage[key] || '{}');
+    },
+    getArray: function(key) {
+      return JSON.parse($window.localStorage[key] || '[]');
     }
   }
 }]);
